@@ -1,0 +1,19 @@
+name: setup-golden-image-debian
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]  
+  workflow_dispatch:
+
+jobs:
+  build:    
+    runs-on: ubuntu-latest    
+    steps:      
+      - uses: actions/checkout@v2
+
+      # Install qemu 
+      - name: Instala o Qemu
+        run: | 
+          apt install qemu qemu-system-x86_64 qemu-img python3 py3-pip samba
