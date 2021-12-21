@@ -16,4 +16,4 @@ jobs:
       # Install qemu 
       - name: Instala o Qemu
         run: | 
-          apt install qemu qemu-system-x86_64 qemu-img python3 py3-pip samba
+          sudo apt install qemu qemu-system-x86_64 qemu-img python3 py3-pip samba --yes
