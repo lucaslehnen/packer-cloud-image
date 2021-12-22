@@ -9,10 +9,25 @@ on:
 
 jobs:
   build:    
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-20.04
     steps:      
       - uses: actions/checkout@v2
 
       # Install qemu 
       - name: Set up QEMU
         run: sudo apt install --no-install-recommends qemu-system-x86
+      
+      # Install Packer
+      - name: 
+        run: |
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+          sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+          sudo apt-get update && sudo apt-get install packer
+
+      # Packer init
+      - name:
+        run: packer init
+
+      # Packer build
+      - name: 
+        run: packer build .
