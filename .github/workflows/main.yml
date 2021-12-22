@@ -15,6 +15,4 @@ jobs:
 
       # Install qemu 
       - name: Set up QEMU
-        uses: ./setup-qemu/
-        with:
-          qemu-version: latest
+        run: sudo apt install --no-install-recommends qemu-system-x86
