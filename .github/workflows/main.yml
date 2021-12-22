@@ -14,6 +14,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Install qemu 
-      - name: Instala o Qemu
-        run: | 
-          sudo apt install qemu qemu-system-x86_64 qemu-img python3 py3-pip samba --yes
+      - name: Set up QEMU
+        uses: ./setup-qemu/
+        with:
+          qemu-version: latest
