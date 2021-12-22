@@ -26,7 +26,7 @@ jobs:
 
       # Packer init
       - name:
-        run: packer init
+        run: packer init .
 
       # Packer build
       - name: 
