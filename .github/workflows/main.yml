@@ -15,7 +15,7 @@ jobs:
 
       # Install qemu 
       - name: Set up QEMU
-        run: sudo apt install --no-install-recommends qemu-system-x86
+        run: sudo apt install --no-install-recommends qemu-system-x86 qemu-utils
       
       # Install Packer
       - name: 
